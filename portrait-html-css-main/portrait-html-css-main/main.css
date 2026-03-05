@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+p { 
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 8px;
+    line-height: 8px;
+    text-align: justify;
+    text-transform: uppercase;
+    word-break: break-all;
+
+    background: url(angela.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
