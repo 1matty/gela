@@ -12,10 +12,11 @@ p {
     padding: 0;
     width: 100vw;
     height: 100vh;
+    position: relative; /* ADD THIS LINE */
+    z-index: 1;        /* ADD THIS LINE */
 
     font-size: 10px;
     line-height: 9px;
-    
     text-align: justify;
     text-transform: uppercase;
     word-break: break-all;
@@ -26,17 +27,14 @@ p {
 
     -webkit-background-clip: text;
     background-clip: text;
-
     -webkit-text-fill-color: transparent;
-
 }
 .main-button {
-    /* Positioning - Perfectly Centered */
-    position: fixed;
+    position: fixed; /* Keep this as fixed */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999; /* Higher than anything else on the page */
+    z-index: 9999;
 
     /* Size and Appearance */
     padding: 20px 50px;
