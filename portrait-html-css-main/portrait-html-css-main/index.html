@@ -8225,5 +8225,23 @@ I'm not there and you're just fine
 But I'm okay 'til tonight
 </span>
 	</p>
-	
+	<script>
+    function generateLyrics() {
+        const container = document.getElementById('lyrics-container');
+        const span = container.querySelector('span');
+        const text = span.innerHTML;
+
+        // Reset first to avoid the "refresh bug"
+        container.innerHTML = text; 
+
+        // Keep adding text until the container is taller than the phone screen
+        while (container.scrollHeight < window.innerHeight * 1.5) {
+            container.innerHTML += " " + text;
+        }
+    }
+
+    // Run when page loads and if the user rotates their phone
+    window.onload = generateLyrics;
+    window.onresize = generateLyrics;
+</script>
 </body>
