@@ -4,6 +4,11 @@
 </head>
 
 <body>
+	<div style="position: relative; z-index: 9999;">
+        <button class="main-button" onclick="alert('Button Clicked!')">
+            CLICK ME
+        </button>
+    </div>
 	<p id="lyrics-container">
 		<span>
 		One, two, three, four
@@ -52,10 +57,6 @@ I'm not there and you're just fine
 But I'm okay 'til tonight		
 </span>
 	</p>
-	<button class="main-button" onclick="alert('Button Clicked!')">
-    	CLICK ME
-	</button>
-
 	<script>
     	function generateLyrics() {
 		    const container = document.getElementById('lyrics-container');
