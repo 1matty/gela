@@ -1,63 +1,50 @@
-body, html {
+body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
     background: #000;
     overflow: hidden;
+    /* Create a new stacking context for the whole page */
+    isolation: isolate; 
 }
 
-p { 
+p {
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
-    position: relative; /* ADD THIS LINE */
-    z-index: 1;        /* ADD THIS LINE */
+    /* This ensures the lyrics stay on the bottom layer */
+    position: relative;
+    z-index: 1; 
 
+    /* Keep your existing font and background-clip settings */
     font-size: 10px;
     line-height: 9px;
     text-align: justify;
     text-transform: uppercase;
     word-break: break-all;
-
     background: url(angela.jpg) no-repeat center center;
     background-size: cover;
-    background-attachment: scroll;
-
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .main-button {
-    position: fixed; /* Keep this as fixed */
+    /* Use fixed to keep it centered regardless of the lyrics height */
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999;
+    /* Set this much higher than the p tag's z-index */
+    z-index: 999; 
 
-    /* Size and Appearance */
+    /* Styling - Keep it solid white so it's visible */
     padding: 20px 50px;
     font-size: 24px;
-    font-family: sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    
-    /* Visibility Fix: Solid colors so it doesn't disappear */
     color: #000;
     background-color: #fff;
     border: none;
-    border-radius: 50px; /* Rounded pill shape */
-    
-    /* Interaction */
+    border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: all 0.3s ease;
-}
-
-.main-button:hover {
-    background-color: #ff0055; /* Changes color when you hover */
-    color: #fff;
-    transform: translate(-50%, -55%); /* Slight lift effect */
+    display: block !important; /* Force display */
 }
